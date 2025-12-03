@@ -1,0 +1,113 @@
+/*Navbar*/
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link{
+    color: #222222 !important;
+}
+
+/*Footer*/
+footer {
+    background-color: #f8f9fa;
+    color: #222;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    
+}
+
+
+/* Cards */
+
+.listing-card{
+  margin-bottom:2rem;
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff;
+  transition:.3s
+}
+.listing-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 16px 30px rgba(0,0,0,.2)
+}
+.listing-card img{transition:.4s}
+.listing-card:hover img{transform:scale(1.1)}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-title {
+    font-size: 1.2rem !important;
+    font-weight: 600;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* new page */
+
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* edit page */
+
+/*edit*/
+.edit-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+  color: #fff !important;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem; 
+  border-radius: 6px;
+  width: auto !important;
+  display: inline-block; 
+}
+
+.edit-btn:hover {
+  background-color: #222222 !important;
+  color: #fff !important;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+/*show */
+
+.show-img{
+    height: 30vh;
+}
+
+.btns{
+    display: flex;
+
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* map */
+
+#map { 
+    height: 400px;
+    width: 80vh;
+}
