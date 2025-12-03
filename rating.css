@@ -1,0 +1,48 @@
+/* Rating Stars CSS */
+.rating {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  display: inline-flex;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 35px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+  color: gold;
+  transform: scale(1.1);
+}
+
+.rating input:checked ~ label {
+  color: gold;
+}
+
+.rating input:checked + label:hover,
+.rating input:checked + label:hover ~ label {
+  transform: scale(1.15);
+}
+
+
+/* Static stars (for show.ejs) */
+.static-rating {
+  display: inline-flex;
+  font-size: 35px;   /* SAME size as interactive stars */
+  line-height: 1;
+}
+
+.static-rating .filled {
+  color: gold;       /* SAME gold color */
+}
+
+.static-rating .empty {
+  color: #ccc;       /* SAME gray color */
+}
