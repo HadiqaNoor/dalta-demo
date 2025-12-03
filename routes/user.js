@@ -1,14 +1,26 @@
-<% if(success && success.length) {%>
-<div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
-    <%= success %>
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+const express = require("express");
+const router = express.Router();
+const User = require("../models/user.js");
+const wrapAsync = require("../utils/wrapAsync.js");
+const passport = require("passport");
+const { saveRedirectUrl } = require("../middleware.js");
+const userController = require("../controllers/users.js");
 
-<% } %>
 
-<% if(error && error.length) {%>
-<div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
-    <%= error %>
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>  
-</div>
-<% } %>
+router
+  .route("/signup")
+  .get(userController.renderSignupForm)
+  .post(wrapAsync(userController.signup));
+
+router
+  .route("/login")
+  .get(userController.renderLoginForm)
+  .post(
+    saveRedirectUrl,
+    passport.authenticate("local", { failureFlash: true, failureRedirect: "/login" }),
+    userController.login
+  );
+
+router.get("/logout", userController.logout);
+
+module.exports = router;
